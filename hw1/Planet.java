@@ -63,7 +63,6 @@ public class Planet{
 
     /* update the planet */
     public void update(double dt){
-        //this.setNetForce();
          this.xAccel = this.xNetForce/ this.mass;
          this.yAccel = this.yNetForce/ this.mass;
 

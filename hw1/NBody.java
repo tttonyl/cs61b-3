@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Scanner;
 
 public class NBody{
     public static Planet getPlanet(In in){
@@ -11,7 +10,7 @@ public class NBody{
         String img = in.readString();
         Planet planet = new Planet(x, y, xVelocity, yVelocity, mass, img);
         return planet;
-    }
+    } // close getPlanet method
 
     public static void main(String[] args){
         double T, dt, radius;
@@ -40,16 +39,16 @@ public class NBody{
             for (int i = 0; i < num; i++){
                 planets[i].update(dt);
                 planets[i].draw();
-            }
+            } //close for loop
             StdDraw.show(10);
             time += dt;
-        }
+        } // close while
 
         StdOut.printf("%d\n", num);
         StdOut.printf("%.2e\n", radius);
         for (int i = 0; i < num; i++) {
             StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
             planets[i].x, planets[i].y, planets[i].xVelocity, planets[i].yVelocity, planets[i].mass, planets[i].img);
-        }
-    }
-}
+        } //close for loop
+    } // close main
+} // close class
